@@ -1,0 +1,19 @@
+name: shortterm_event_pred
+channels:
+  - pytorch
+  - conda-forge
+  - nodefaults
+dependencies:
+  - pandas
+  - seaborn
+  - scikit-learn
+  - sktime
+  - pytorch=1.10.0
+  - cudatoolkit=10.2
+  - pytorch-lightning=1.5.9
+  - jupyter
+  - flaml
+  - markdown=3.3.4
+  - torchvision
+  - pyyaml
+prefix: /home/thomas/miniconda3/envs/shortterm_event_pred

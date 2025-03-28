@@ -1,0 +1,110 @@
+dataset_path: data/
+sampling_config:
+  window_length_lookback: 12 #intervalls a 5sec (12 equals 1 minute)
+  window_length_outlook: 12 #intervalls a 5sec (12 equals 1 minute)
+  pi_list:
+    - Shot
+    - BP
+    - BP3rd
+    - BPBox
+    - Goal
+    - Cross
+    - PassBox
+    - Pass3rd
+    - Corner
+    - TackWon
+    - Danger
+    - OutpOpp
+    - Shot_diff
+    - BP_diff
+    - BP3rd_diff
+    - BPBox_diff
+    - Goal_diff
+    - Cross_diff
+    - PassBox_diff
+    - Pass3rd_diff
+    - Corner_diff
+    - TackWon_diff
+    - Danger_diff
+    - OutpOpp_diff
+    - EntrBox
+    - Entr3rd
+    - EntrBox_diff
+    - Entr3rd_diff
+  training_goal: Goal #Shot, Cross, Corner, Entr3rd
+  folding: [ 'any_above', 0 ]
+  hidden: 12 #intervalls a 5sec (12 equals 1 minute)
+  sample_rate: 1
+  split: [ 0.6, 0.2, 0.2 ]
+  split_in_matches: False  #decide whether data split happens within matches (TRUE) or across matches (FALSE)
+  normalize: True     # Normalizing features to a [0,1] range. The scaler is fitted to the training data and subsequently applied to the validation and test sets
+  parallelize: True   #reading the data parallel on multiple threads
+mode: classification
+pi_config_list:
+  - [ Shot ]
+  - [ BP ]
+  - [ BP3rd ]
+  - [ BPBox ]
+  - [ Goal ]
+  - [ Cross ]
+  - [ PassBox ]
+  - [ Pass3rd ]
+  - [ Corner ]
+  - [ TackWon ]
+  - [ Danger ]
+  - [ OutpOpp ]
+  - [ Shot_diff ]
+  - [ BP_diff ]
+  - [ BP3rd_diff ]
+  - [ BPBox_diff ]
+  - [ Goal_diff ]
+  - [ Cross_diff ]
+  - [ PassBox_diff ]
+  - [ Pass3rd_diff ]
+  - [ Corner_diff ]
+  - [ TackWon_diff ]
+  - [ Danger_diff ]
+  - [ OutpOpp_diff ]
+  - [ EntrBox ]
+  - [ Entr3rd ]
+  - [ EntrBox_diff ]
+  - [ Entr3rd_diff ]  #individual PI as single input
+  - [ Shot, BP ] #individual PIs as multiple inputs
+  - [ BP, Cross ]
+models: # list all models which should be performed
+  # Note that when using the NN Classifier, the number of PIs must be the same in all pi_config_list entries
+  LogisticRegressionClassifier:
+    model_config:
+      class_weight: balanced
+      n_jobs: -1
+  NBClassifier:
+    model_config: {}
+  SVMClassifier:
+    model_config:
+      class_weight: balanced
+  KNNClassifier:
+    model_config:
+      n_neighbors: 2
+      weights: distance
+      n_jobs: 32      
+  RandomGuesser:
+    model_config: {}
+  # Note that when using the NN Classifier, the number of PIs must be the same in all pi_config_list entries
+  #NNClassifier:
+  # model_config:
+  #    model_config:
+  #      num_channels: 2    #Number of PIs per pi_config_list entry
+  #      time_steps: 12 #same number like window_length_lookback
+  #      class_weights: { 0: 1, 1: 1 }
+  #      lr: 0.001
+  #      dropout_probability: 0.4
+  #      classification: True
+  #    batch_size: 32
+  #    sampling: balanced_best
+  #    trainer_config:
+  #      max_epochs: 5
+  #      enable_progress_bar: False
+  #      enable_model_summary: None
+  #    gpus: 1
+save_models: False
+output_dir_path: output
