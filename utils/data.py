@@ -112,6 +112,16 @@ def split_into_samples(matches: Iterable[DataFrame],
                               callback=collect_results)
             p.close()
             p.join()
+            sort_indices = np.argsort(np.array(ids))
+            x_train = [x_train[i] for i in sort_indices]
+            x_val = [x_val[i] for i in sort_indices]
+            x_test = [x_test[i] for i in sort_indices]
+            y_train = [y_train[i] for i in sort_indices]
+            y_val = [y_val[i] for i in sort_indices]
+            y_test = [y_test[i] for i in sort_indices]
+            labels_train = [labels_train[i] for i in sort_indices]
+            labels_val = [labels_val[i] for i in sort_indices]
+            labels_test = [labels_test[i] for i in sort_indices]
     else:
         for match in matches:
             # Split each match into train-val-test
@@ -198,12 +208,7 @@ def split_into_samples(matches: Iterable[DataFrame],
             x_test = scaler.transform(x_test.reshape(-1, x_test.shape[-1])).reshape(x_test.shape)
         if len(x_val) > 0:
             x_val = scaler.transform(x_val.reshape(-1, x_val.shape[-1])).reshape(x_val.shape)
-
-        import pickle
-        with open('output/applicationscenario/MinMaxScaler.pkl', 'wb') as f:
-            pickle.dump(scaler, f)
-        print("Saved Scaler to output/applicationscenario/MinMaxScaler.pkl")
-
+        
     if split is None:
         return x_train, y_train, labels_train
 
@@ -287,7 +292,6 @@ def split_match_into_samples(data: DataFrame,
 
     # Currently |-----------[---lookback---|---hidden---|---outlook---]----|
     # with only taking intervals that are fully covered in the game.
-    # Currently doesn't care if there is a goal in the lookback window
 
     label_list = []
     x_list = []

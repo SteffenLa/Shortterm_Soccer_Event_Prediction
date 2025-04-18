@@ -16,4 +16,3 @@ dependencies:
   - markdown=3.3.4
   - torchvision
   - pyyaml
-prefix: /home/thomas/miniconda3/envs/shortterm_event_pred

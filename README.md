@@ -1,4 +1,4 @@
-# Short-Term Goal Prediction with Machine Learning in Soccer
+# Lang et al. (in Review) Which indicators matter? Using performance indicators to predict in-game success-related events in association football. International Journal of Computer Science in Sport (IJCSS).
 
 ## Generic Experiment structure written in Python
 
@@ -27,10 +27,9 @@ conda env update --file environment.yml --prune
 
 The repository is structured as follows:
 
-- configs folder: contains some sample configuration files for the experiments and plots
-- data folder: contains the data files for the experiments
-- evaluation folder: contains the evaluation scripts for the experiments
-- models folder: contain various ML model implementations that can be used in experiments
+- configs folder: contains a training configuration file for the experiment
+- data folder: contains an original match data file used in the experiments discribed in the study
+- models folder: contains various ML model implementations that can be used in experiments
 - output folder: contains the output files of the experiments and plots
 - utils folder: contains various utility functions that can be used in experiments (data sampling, visualization, etc.)
 - notebooks folder: contains notebooks that were created in the IDP, however, they are not necessary to run experiments
