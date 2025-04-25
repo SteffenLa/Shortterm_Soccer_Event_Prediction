@@ -69,15 +69,15 @@ We use **Conda** for environment and dependency management. To set up the projec
 
 1. **Create the environment**  
     Run the following command in the repository root to install all required libraries:       
-   `conda env create \-f environment.yml`
+   `conda env create -f environment.yml`
    
 2. **Activate the environment**
    Once created, activate the environment using:  
-   `conda activate shortterm\_event\_pred`
+   `conda activate shortterm_event_pred`
 
 3. **Update the environment**  
    If you’ve already created the environment and the `environment.yml` file has changed, you can update it with:    
-   `conda env update \--file environment.yml \--prune`
+   `conda env update --file environment.yml --prune`
 
    This will ensure all dependencies are up to date and any removed packages are pruned accordingly.
 
