@@ -150,7 +150,7 @@ This repository does not include the full results of the experiments, as they ar
  
 ---
 
-**🛡️ License**
+### 🛡️ License
 
 This repository is shared under the Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0) license, in accordance with the journal’s Open Access policy.
 
