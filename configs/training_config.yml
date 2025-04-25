@@ -36,7 +36,7 @@ sampling_config:
   hidden: 12 #intervalls a 5sec (12 equals 1 minute)
   sample_rate: 1
   split: [ 0.6, 0.2, 0.2 ]
-  split_in_matches: False  #decide whether data split happens within matches (TRUE) or across matches (FALSE)
+  split_in_matches: True  #decide whether data split happens within matches (TRUE) or across matches (FALSE)
   normalize: True     # Normalizing features to a [0,1] range. The scaler is fitted to the training data and subsequently applied to the validation and test sets
   parallelize: True   #reading the data parallel on multiple threads
 mode: classification
