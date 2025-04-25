@@ -1,6 +1,19 @@
 # Lang et al. (in Review) Which indicators matter? Using performance indicators to predict in-game success-related events in association football.
 
 Paper link: tbd
+---
+
+## 📑 Table of Contents
+
+- [📖 About](#-about)
+- [📁 Repository Structure](#-repository-structure)
+- [⚙️ Setup](#️-setup)
+- [🚀 Running Experiments](#-running-experiments)
+- [📊 Data](#-data)
+- [📈 Results and Evaluation](#-results-and-evaluation)
+- [📚 Citation](#-citation)
+- [🛡️ License](#-license)
+- [📬 Contact](#-contact)
 
 ---
 
