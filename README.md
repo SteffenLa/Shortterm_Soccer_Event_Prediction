@@ -2,6 +2,8 @@
 
 Paper link: tbd
 
+---
+
 ### 📘 About
 
 This repository accompanies the article "*Which indicators matter? Using performance indicators to predict in-game success-related events in association football*", under review in *International Journal of Computer Science in Sport (IJCSS)*. 
@@ -13,6 +15,8 @@ Using data from 102 Bundesliga matches and thousands of machine learning model c
 To our knowledge, this is the first study to predict in-play events *beyond the immediate next event*, opening new possibilities for real-time match analysis. Based on our findings, we also propose a novel match momentum metric, grounded in empirical prediction data, which can support tactical decisions and enhance in-play betting strategies.
 
 This repository includes the code, model configurations, and result outputs used in the study. It is intended for researchers, analysts, and practitioners interested in applied machine learning for sports analytics, event prediction, and real-time performance evaluation.
+
+---
 
 ### **📁** Repository Structure
 
@@ -35,7 +39,7 @@ The repository is organized as follows:
 * **`utils/`**  
    Includes utility scripts for data handling, sampling, and visualization.
 
-  #### **📄 Key Files**
+#### **📄 Key Files**
 
 * **`environment.yml`**  
    Conda environment file listing all required dependencies.
@@ -44,50 +48,37 @@ The repository is organized as follows:
    Main script for initializing and running experiments based on provided configurations.
 
 
+---
+
 ### **⚙️ Setup**
 
 We use **Conda** for environment and dependency management. To set up the project environment, follow these steps:
 
 1. **Create the environment**  
-    Run the following command in the repository root to install all required libraries:  
-   \`\`\`  
-   conda env create \-f environment.yml
-
-   \`\`\`
-
-2. **Activate the environment**
-
-   Once created, activate the environment using:  
-   \`\`\`
-
-   conda activate shortterm\_event\_pred
-
-   \`\`\`
-
+    Run the following command in the repository root to install all required libraries:       
+   `conda env create \-f environment.yml`
    
+2. **Activate the environment**
+   Once created, activate the environment using:  
+   `conda activate shortterm\_event\_pred`
 
 3. **Update the environment**  
-   If you’ve already created the environment and the `environment.yml` file has changed, you can update it with:  
-   \`\`\`  
-   conda env update \--file environment.yml \--prune
-
-   \`\`\`
+   If you’ve already created the environment and the `environment.yml` file has changed, you can update it with:    
+   `conda env update \--file environment.yml \--prune`
 
    This will ensure all dependencies are up to date and any removed packages are pruned accordingly.
 
+---
+
 ### **🧪 Running Experiments**
 
-### You can run experiments using the `run.py` script along with a configuration file that defines the experimental setup.
+You can run experiments using the `run.py` script along with a configuration file that defines the experimental setup.
 
 #### **▶️ Basic Usage**
 
-\`\`\`  
-python run.py CONFIG
+`python run.py CONFIG`
 
-\`\`\`
-
-* Replace `CONFIG` with the **name of a configuration file** located in the `configs/` folder (e.g., `goal_pred_5min.yaml`).
-
+* Replace `CONFIG` with the **name of a configuration file** located in the `configs/` folder (e.g., `training_config.yaml`).
 * This file specifies parameters such as input and prediction windows, target events, and model settings.
 
 #### **📂 Configuration Templates**
@@ -104,17 +95,17 @@ This design makes it easy to reproduce the original experiments or explore new s
 
 ### **📊 Data**
 
-### This repository includes data from one sample match, which is provided for demonstration and testing purposes only. Due to licensing restrictions, we are unable to share the full dataset used in the study.
+This repository includes data from one sample match, which is provided for demonstration and testing purposes only. Due to licensing restrictions, we are unable to share the full dataset used in the study.
 
-### **Please note:**
+#### **Please note:**
 
-* ### We are not the legal owners of the complete dataset.
+* We are not the legal owners of the complete dataset.
+* The full set of event and tracking data from 102 Bundesliga matches used in the published study is not publicly available.
+* However, as stated in the article, data access for academic or research purposes may be granted upon reasonable request to the corresponding author.
 
-* ### The full set of event and tracking data from 102 Bundesliga matches used in the published study is not publicly available.
+The included sample file allows users to explore the structure, preprocessing, and modeling workflow described in the paper.
 
-* ### However, as stated in the article, data access for academic or research purposes may be granted upon reasonable request to the corresponding author.
-
-### The included sample file allows users to explore the structure, preprocessing, and modeling workflow described in the paper.
+---
 
 ### 📈 Results and Evaluation
 
@@ -138,26 +129,31 @@ This repository does not include the full results of the experiments, as they ar
 
 * Please refer to the article for a full methodological description and in-depth analysis.
 
-### 📚 Citation
+---
 
-\`\`\`  
-Lang, S., Wimmer, T., Erben, A., & Link, D. (**in Review**). Which indicators matter? Using performance indicators to predict in-game success-related events in association football. *International Journal of Computer Science in Sport (IJCSS)*.  
-\`\`\`  
+### 📚 Citation
+ 
+`Lang, S., Wimmer, T., Erben, A., & Link, D. in (Review). Which indicators matter? Using performance indicators to predict in-game success-related events in association football. International Journal of Computer Science in Sport (IJCSS).`
+ 
+---
+
 **🛡️ License**
 
-### This repository is shared under the Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0) license, in accordance with the journal’s Open Access policy.
+This repository is shared under the Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0) license, in accordance with the journal’s Open Access policy.
 
-### You are free to:
+You are free to:
 
-* ### **Share** — copy and redistribute the material in any medium or format    As long as you follow these terms: 
+* **Share** — copy and redistribute the material in any medium or format    As long as you follow these terms: 
 
-* ### **Attribution** — you must give appropriate credit, provide a link to the license, and indicate if changes were made. 
+* **Attribution** — you must give appropriate credit, provide a link to the license, and indicate if changes were made. 
 
-* ### **NonCommercial** — you may not use the material for commercial purposes. 
+* **NonCommercial** — you may not use the material for commercial purposes. 
 
-* ### **NoDerivatives** — if you remix, transform, or build upon the material, you may not distribute the modified material. 
+* **NoDerivatives** — if you remix, transform, or build upon the material, you may not distribute the modified material. 
 
-### License details: https://creativecommons.org/licenses/by-nc-nd/4.0/
+License details: https://creativecommons.org/licenses/by-nc-nd/4.0/
+
+---
 
 ### **📬 Contact**
 
@@ -165,5 +161,5 @@ For questions regarding the repository, data usage, or the study itself, please 
 
 **Steffen Lang**  
 TUM School of Medicine and Health Sciences  
- Technical University of Munich (TUM)  
- ✉️ steffen.lang@tum.de
+Technical University of Munich (TUM)  
+✉️ steffen.lang@tum.de
