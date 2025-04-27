@@ -41,7 +41,7 @@ def split_into_samples(matches: Iterable[DataFrame],
                        window_length_lookback: int,
                        window_length_outlook: int,
                        pi_list: list,
-                       training_goal: str = "isGoal",
+                       training_goal: str = "Goal",
                        folding=("any_above", 0),
                        hidden: int = 0,
                        sample_rate: int = 1,
@@ -58,7 +58,7 @@ def split_into_samples(matches: Iterable[DataFrame],
     :param window_length_lookback: Number of frames that are used for one training sample sequence
     :param window_length_outlook: Number of frames to look into future to see if there is a goal
     :param pi_list: List indicating the names of performance indicators that should be used
-    :param training_goal: Prediction goal (e.g. goals)
+    :param training_goal: Prediction goal (e.g. Goal)
     :param folding: Folding of training goal: ("any_above", value) or "sum" or "mean"
     :param hidden: Interval to hide between lookback and outlook windows
     :param sample_rate: Step size of rolling window sampling
@@ -112,16 +112,6 @@ def split_into_samples(matches: Iterable[DataFrame],
                               callback=collect_results)
             p.close()
             p.join()
-            sort_indices = np.argsort(np.array(ids))
-            x_train = [x_train[i] for i in sort_indices]
-            x_val = [x_val[i] for i in sort_indices]
-            x_test = [x_test[i] for i in sort_indices]
-            y_train = [y_train[i] for i in sort_indices]
-            y_val = [y_val[i] for i in sort_indices]
-            y_test = [y_test[i] for i in sort_indices]
-            labels_train = [labels_train[i] for i in sort_indices]
-            labels_val = [labels_val[i] for i in sort_indices]
-            labels_test = [labels_test[i] for i in sort_indices]
     else:
         for match in matches:
             # Split each match into train-val-test

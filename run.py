@@ -13,12 +13,6 @@ from utils.data import split_into_samples, data_generator, get_files_in_dir
 from utils.metrics import apply_metrics
 from sktime.datatypes._panel._convert import from_3d_numpy_to_nested
 
-def timeformatting (starttime, endtime):
-    elapsed_time = endtime - starttime
-    hours, remainder = divmod(elapsed_time, 3600)
-    minutes, seconds = divmod(remainder, 60)
-    return f"{int(hours):02}:{int(minutes):02}:{int(seconds):02}"  
-
 def main():
     
     start_time_job = time.time()
@@ -75,14 +69,6 @@ def main():
 
     print("Dataset sampling successful.")
     print(f"Ratio of positive sample in data set: {y_train.sum() / len(y_train)} (train), {y_val.sum() / len(y_val)} (val), {y_test.sum() / len(y_test)} (test)")
-
-
-    if args.piconfiglist is not None:                
-            print(f"Read {args.piconfiglist}")
-            with open(args.piconfiglist, "r") as file:
-                combinations_content = file.read().splitlines()
-            config["pi_config_list"] = [comb.split(', ') for comb in combinations_content]
-            print("Successfully readed")
  
     pi_list = config.get("sampling_config").get("pi_list")
     pi_config_list = config.get("pi_config_list")
@@ -169,6 +155,12 @@ def main():
     results.to_csv(output_path, index=False, sep=";", decimal=",")
     print(f"DONE! Wrote new CSV file in {output_path}")
     print(f"Elapsed time for complete Job : {timeformatting(start_time_job, time.time())}")
+
+def timeformatting (starttime, endtime):
+    elapsed_time = endtime - starttime
+    hours, remainder = divmod(elapsed_time, 3600)
+    minutes, seconds = divmod(remainder, 60)
+    return f"{int(hours):02}:{int(minutes):02}:{int(seconds):02}"  
 
 if __name__ == "__main__":
     main()

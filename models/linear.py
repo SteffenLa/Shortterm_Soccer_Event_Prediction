@@ -1,7 +1,3 @@
-"""
-This file contains a linear classifier and regression model that simply get the (possibly multivariate) time
-series as input as suggested by the supervisors.
-"""
 from models.abstract import ClassificationModel, Model
 from sklearn.linear_model import LogisticRegression, LinearRegression
 

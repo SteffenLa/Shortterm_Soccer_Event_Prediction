@@ -1,6 +1,5 @@
 """
-This file contains a SVM classifier and regression model that simply get the (possibly multivariate) time
-series as input as suggested by the supervisors.
+This file contains a SVM classifier and regression model that simply get the (possibly multivariate) time series as input.
 """
 from models.abstract import ClassificationModel, Model
 from sklearn.svm import SVC, SVR

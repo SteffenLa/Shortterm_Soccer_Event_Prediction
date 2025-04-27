@@ -1,6 +1,6 @@
 """
 'Random' guessing baseline model.
-Uses a binomial distribution with p = ratio of training samples with goals in training set.
+Uses a binomial distribution with p = ratio of training samples with events in training set.
 Always predicts this ratio as probability when asked for predict_proba(x).
 """
 

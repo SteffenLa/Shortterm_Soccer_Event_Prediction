@@ -1,5 +1,4 @@
-;;;;;;Shot;BP;BP3rd;BPBox;Goal;Cross;PassBox;Pass3rd;Corner;TackWon;Danger;OutpOpp;Shot_diff;BP_diff;BP3rd_diff;BPBox_diff;Goal_diff;Cross_diff;PassBox_diff;Pass3rd_diff;Corner_diff;TackWon_diff;Danger_diff;OutpOpp_diff;EntrBox;Entr3rd;EntrBox_diff;Entr3rd_diff
-MatchID;Team;Opponent;StartFrameID;EndFrameID;Intervall;isShot;IBAtime;IBAtimeInLastThird;IBAtimeInBox;isGoal;isCross;isPassSuccsessfulInBox;isPassSuccsessfulInLastThird;isCorner;TacklingWon_Event;DS_SubPhasesPeakweighted;Packing;isShot_dif;IBAtime_dif;IBAtimeInLastThird_dif;IBAtimeInBox_dif;isGoal_dif;isCross_dif;isPassSuccsessfulInBox_dif;isPassSuccsessfulInLastThird_dif;isCorner_dif;TacklingWon_dif;DS_SubPhasesPeakweighted_dif;Packing_dif;isEntryInBox;isEntryInLastThird;isEntryInLastThird_dif;isEntryInBox_dif
+MatchID;Team;Opponent;StartFrameID;EndFrameID;Intervall;Shot;BP;BP3rd;BPBox;Goal;Cross;PassBox;Pass3rd;Corner;TackWon;Danger;OutpOpp;Shot_diff;BP_diff;BP3rd_diff;BPBox_diff;Goal_diff;Cross_diff;PassBox_diff;Pass3rd_diff;Corner_diff;TackWon_diff;Danger_diff;OutpOpp_diff;EntrBox;Entr3rd;EntrBox_diff;Entr3rd_diff
 1;Team_1;Team_2;0;126;1;0;87;0;0;0;0;0;0;0;0;0;0;0;87;0;0;0;0;0;0;0;0;0;0;0;0;0;0
 1;Team_1;Team_2;127;251;2;0;45;0;0;0;0;0;0;0;0;0;0;0;45;0;0;0;0;0;0;0;0;0;0;0;0;0;0
 1;Team_1;Team_2;252;376;3;0;87;0;0;0;0;0;0;0;0;0;0;0;87;0;0;0;0;0;0;0;0;0;0;0;0;0;0
