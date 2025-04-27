@@ -47,10 +47,10 @@ The repository is organized as follows:
    Contains implementations of various machine learning models used in the experiments.
 
 * **`output/`**  
-   Stores output files, including model results, evaluation metrics, and generated plots.
+   Stores output files, including model results and evaluation metrics.
 
 * **`utils/`**  
-   Includes utility scripts for data handling, sampling, and visualization.
+   Includes utility scripts for data handling and sampling.
 
 #### **📄 Key Files**
 
