@@ -146,7 +146,7 @@ This repository does not include the full results of the experiments, as they ar
 
 ### 📚 Citation
  
-`Lang, S., Wimmer, T., Erben, A., & Link, D. in (Review). Which indicators matter? Using performance indicators to predict in-game success-related events in association football. International Journal of Computer Science in Sport (IJCSS).`
+`Lang, S., Wimmer, T., Erben, A., & Link, D. (in Review). Which indicators matter? Using performance indicators to predict in-game success-related events in association football. International Journal of Computer Science in Sport (IJCSS).`
  
 ---
 
