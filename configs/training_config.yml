@@ -1,7 +1,7 @@
-dataset_path: data/
-sampling_config:
-  window_length_lookback: 12 #intervalls a 5sec (12 equals 1 minute)
-  window_length_outlook: 12 #intervalls a 5sec (12 equals 1 minute)
+dataset_path: data/ #Relative path to the data directory.
+sampling_config: #Controls how training samples are created from the raw data.
+  window_length_lookback: 12 #Number of 5-second intervals to look back (e.g., 12 = 1 minute).
+  window_length_outlook: 12 #Number of 5-second intervals to look ahead (e.g., 12 = 1 minute).
   pi_list:
     - Shot
     - BP
@@ -33,15 +33,15 @@ sampling_config:
     - Entr3rd_diff
   training_goal: Goal #Shot, Cross, Corner, Entr3rd
   folding: [ 'any_above', 0 ]
-  hidden: 12 #intervalls a 5sec (12 equals 1 minute)
-  sample_rate: 1
-  split: [ 0.6, 0.2, 0.2 ]
+  hidden: 12 #hidden period between lookback and outlook (e.g., 12 = 1 minute gap).
+  sample_rate: 1 #Downsampling rate (1 = no downsampling).
+  split: [ 0.6, 0.2, 0.2 ] #Train/val/test split as fractions (must sum to 1.0).
   normalize: True     # Normalizing features to a [0,1] range. The scaler is fitted to the training data and subsequently applied to the validation and test sets
   parallelize: False   #reading the data parallel on multiple threads
   split_in_matches: False  #decide whether data split happens within matches (TRUE) or across matches (FALSE)
   random_folds: True #if split_in_matches: True than random_folds: False, if split_in_matches: False than both is possible
 mode: classification
-pi_config_list:
+pi_config_list: # Defines sets of PIs used for individual model runs. Can be single PI ([ Shot ]) or combinations ([ Shot, BP ]). Each set defines a separate model training run using the specified PIs.
   - [ Shot ]
   - [ BP ]
   - [ BP3rd ]
@@ -72,8 +72,7 @@ pi_config_list:
   - [ Entr3rd_diff ]  #individual PI as single input
   - [ Shot, BP ] #individual PIs as multiple inputs
   - [ BP, Cross ]
-models: # list all models which should be performed
-  # Note that when using the NN Classifier, the number of PIs must be the same in all pi_config_list entries
+models: # Specifies which models to train and their hyperparameters.
   LogisticRegressionClassifier:
     model_config:
       class_weight: balanced
@@ -90,7 +89,7 @@ models: # list all models which should be performed
       n_jobs: 32      
   RandomGuesser:
     model_config: {}
-  # Note that when using the NN Classifier, the number of PIs must be the same in all pi_config_list entries
+  # Note NNClassifier requires consistent input shape across pi_config_list entries. Use only when all sets have the same number of PIs.
   #NNClassifier:
   # model_config:
   #    model_config:
@@ -107,5 +106,5 @@ models: # list all models which should be performed
   #      enable_progress_bar: False
   #      enable_model_summary: None
   #    gpus: 1
-save_models: False
-output_dir_path: output
+save_models: False #Whether trained models should be saved to disk.
+output_dir_path: output #Directory where results, logs, or saved models (if enabled) will be stored.
