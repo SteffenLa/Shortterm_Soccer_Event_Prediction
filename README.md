@@ -47,7 +47,15 @@ The repository is organized as follows:
    Contains implementations of various machine learning models used in the experiments.
 
 * **`output/`**  
-   Stores output files, including model results and evaluation metrics.
+ Contains output files generated during the analysis. Specifically, it includes:
+
+  * The scaler file (`MinMaxScaler.pkl`) used for feature normalization.
+
+  * A Jupyter Notebook (`apply_models.ipynb`) demonstrating how to load and apply the top 3 trained models to a match.
+
+  * A folder `models/` containing the three trained logistic regression models used in our experiments.
+
+   This structure supports reproducibility by providing all necessary components to run predictions on new data. 
 
 * **`utils/`**  
    Includes utility scripts for data handling and sampling.
@@ -98,17 +106,23 @@ You can run experiments using the `run.py` script along with a configuration fil
 
 The `configs/` folder includes:
 
-* A **README file** explaining how to structure configuration files.
-
-* **Sample configurations** you can use directly or modify for your own experiments.
+* **Sample configuration** you can use directly or modify for your own experiments.
 
 This design makes it easy to reproduce the original experiments or explore new setups with minimal adjustments.
+
+#### **▶️ Applying Pretrained Models**
+
+To facilitate application and validation, the repository includes the top three pretrained models from our analysis in the `output/models/` folder.
+A Jupyter Notebook (`output/apply_models.ipynb`) is provided to guide users through loading these models and applying them to new match data without retraining.
+This enables quick testing and exploration of model predictions on unseen data.
 
 ---
 
 ### **📊 Data**
 
-This repository includes data from one sample match, which is provided for demonstration and testing purposes only. Due to licensing restrictions, we are unable to share the full dataset used in the study.
+This repository includes data from one sample match (`data/Match_01.csv`), which is provided for demonstration and testing purposes only. Due to licensing restrictions, we are unable to share the full dataset used in the study.
+
+To facilitate testing and development, we have also included a folder named **`data/synthetic_data_files`**, which contains 102 synthetic datasets generated to resemble the structure and characteristics of the original data. Additionally, a Jupyter notebook is provided (`data/generate_sythetic_data.ipynb`) that documents and demonstrates how these synthetic datasets were created.
 
 #### **Please note:**
 
